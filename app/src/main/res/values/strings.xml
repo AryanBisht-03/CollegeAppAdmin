@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">collegeAppAdmin</string>
+
+    <!-- Used in Recycler Layout-->
+    <string name="title_quantity">Quantity</string>
+    <string name="title_issue">Issue Date</string>
+    <string name="title_return">Return Date</string>
+
+    <!--Used in Google Services -->
+    <string name="key_student">Students</string>
+    <string name="key_gender">gender</string>
+    <string name="key_batch">batch</string>
+    <string name="key_rollNum">rollNum</string>
+    <string name="key_name">name</string>
+    <string name="key_image">image</string>
+    <string name="key_library">library</string>
+    <string name="key_sport">sport</string>
+    <string name="key_teacher">Teachers</string>
+
+    <!--Used in MainActivty -->
+    <string name="instruction_Text">Please LogIn using your college official Gmail ID.</string>
+    <string name="name_Text">Your Name :-)</string>
+    <string name="proceesDiloag_Title">Please Wait</string>
+    <string name="proceesDiloag_descr">You are logging in the App wait Please wait for while guys.</string>
+
+    <!-- Used in fill Detial Fragemnt -->
+    <string name="DOB">Date of Birth</string>
+    <string name="gender_Profile">Gender</string>
+    <string name="phone_Profile">Phone Number</string>
+
+
+    <!--Used in Profile Fragment-->
+    <string name="title_Profile">IIIT Manipur Teacher</string>
+    <string name="logOutButton_Profile">Log Out</string>
+
+    <!--Used in Sports and library Fragment-->
+    <string name="nothing_title_sport">You have not issue any sport product. Please issue some product and play as well because sport is also
+        a important part of our life. So play some sport and enjoy life :-)</string>
+    <string name="nothing_title_library">You have not issue any books. Please issues and study because you are here to study and make your parents and teachers
+        proud, so study now.. :-)</string>
+
+</resources>
