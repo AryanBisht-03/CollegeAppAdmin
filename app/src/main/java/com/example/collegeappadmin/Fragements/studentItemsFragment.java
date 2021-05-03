@@ -46,33 +46,37 @@ public class studentItemsFragment extends Fragment {
 
         database = FirebaseDatabase.getInstance();
 
-        reference = database.getReference().child(getString(R.string.key_student));
+        reference = database.getReference().child(getContext().getString(R.string.key_student));
         items = new ArrayList<>();
 
         Log.d("Aryan","position is  = "+position.toString());
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int i=0;
-
+                items.clear();
                 for(DataSnapshot data:snapshot.getChildren())
                 {
                     if(i==position) {
                         if(data.child("library").exists())
                         {
 
-                            for(DataSnapshot store: data.child(getString(R.string.key_library)).getChildren())
+                            for(DataSnapshot store: data.child(getContext().getString(R.string.key_library)).getChildren())
                             {
                                 itemModel val = store.getValue(itemModel.class);
+                                val.setType(getContext().getString(R.string.key_library));
+                                val.setUid(data.getKey());
                                 items.add(val);
                             }
                         }
-                        if(data.child(getString(R.string.key_sport)).exists())
+                        if(data.child(getContext().getString(R.string.key_sport)).exists())
                         {
 
-                            for(DataSnapshot store: data.child(getString(R.string.key_sport)).getChildren())
+                            for(DataSnapshot store: data.child(getContext().getString(R.string.key_sport)).getChildren())
                             {
                                 itemModel val = store.getValue(itemModel.class);
+                                val.setType(getContext().getString(R.string.key_sport));
+                                val.setUid(data.getKey());
                                 items.add(val);
                             }
                         }

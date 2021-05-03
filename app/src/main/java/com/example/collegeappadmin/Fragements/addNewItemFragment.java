@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.collegeappadmin.Activities.EmptyFragmentActivity;
+import com.example.collegeappadmin.Activities.bottom_ShowDetailActivity;
 import com.example.collegeappadmin.Models.itemModel;
 import com.example.collegeappadmin.R;
 import com.example.collegeappadmin.databinding.FragmentAddNewItemBinding;
@@ -126,8 +127,8 @@ public class addNewItemFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
-                                Intent intent = new Intent(getActivity(),EmptyFragmentActivity.class);
-                                intent.putExtra("position",position);
+                                Intent intent = new Intent(getActivity(), bottom_ShowDetailActivity.class);
+
                                 startActivity(intent);
                                 getActivity().finish();
                                 return;

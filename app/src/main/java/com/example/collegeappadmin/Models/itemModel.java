@@ -1,10 +1,26 @@
 package com.example.collegeappadmin.Models;
 
 public class itemModel {
-    String name,issueDate,returnDate,quantity;
+    String name,issueDate,returnDate,quantity,Uid,type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public itemModel() {
 
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 
     public String getName() {

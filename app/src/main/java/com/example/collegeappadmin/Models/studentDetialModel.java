@@ -4,6 +4,7 @@ public class studentDetialModel {
 
     String image,name,rollNum;
 
+
     public studentDetialModel(String image, String name, String rollNum) {
         this.image = image;
         this.name = name;

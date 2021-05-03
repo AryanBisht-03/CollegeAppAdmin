@@ -101,6 +101,16 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/viewIssue"
                 app:layout_constraintTop_toBottomOf="@+id/viewIssue" />
+
+            <ImageView
+                android:id="@+id/deleteDataButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_more" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
