@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">collegeAppAdmin</string>
 
+    <!--Used in Add New Item Fragment-->
+    <string name="title_addNew">New Item is Issued</string>
+    <string name="title_bookName">Name of the book</string>
+
+
+    <!--Use in StudentItemFragments-->
+    <string name="button_text">Add new </string>
+    <string name="items_text_NO">This guy not issued anything motivate him to issue some sports item
+        because eventually he/she will issue books.</string>
+
+
     <!-- Used in Recycler Layout-->
     <string name="title_quantity">Quantity</string>
     <string name="title_issue">Issue Date</string>
@@ -38,5 +49,6 @@
         a important part of our life. So play some sport and enjoy life :-)</string>
     <string name="nothing_title_library">You have not issue any books. Please issues and study because you are here to study and make your parents and teachers
         proud, so study now.. :-)</string>
+
 
 </resources>

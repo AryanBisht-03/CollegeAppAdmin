@@ -37,7 +37,7 @@ public class libraryAdapter extends RecyclerView.Adapter<libraryAdapter.libraryV
 
         itemModel data = items.get(position);
         //Put Data here .....
-        holder.binding.bookName.setText(data.getName());
+        holder.binding.itemName.setText(data.getName());
         holder.binding.issueText.setText(data.getIssueDate());
         holder.binding.returnText.setText(data.getReturnDate());
         holder.binding.quantityText.setText(data.getQuantity());

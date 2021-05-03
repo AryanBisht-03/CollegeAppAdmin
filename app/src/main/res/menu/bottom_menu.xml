@@ -2,14 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/libraryItem"
-        android:title="Library"
+        android:id="@+id/studentDetail"
+        android:title="Students"
         android:icon="@drawable/ic_open_book"/>
 
-    <item
-        android:id="@+id/Sports"
-        android:title="Sports"
-        android:icon="@drawable/ic_football"/>
     <item
         android:id="@+id/profile_bottom"
         android:icon="@drawable/ic_keyman"

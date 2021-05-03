@@ -40,14 +40,11 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.libraryItem:
+                    case R.id.studentDetail:
                         binding.viewPager.setCurrentItem(0);
                         break;
-                    case R.id.Sports:
-                        binding.viewPager.setCurrentItem(1);
-                        break;
                     case R.id.profile_bottom:
-                        binding.viewPager.setCurrentItem(2);
+                        binding.viewPager.setCurrentItem(1);
                         break;
                 }
                 return true;
@@ -64,15 +61,12 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-
-                        binding.bottomNavigationView.getMenu().findItem(R.id.libraryItem).setChecked(true);
+                        binding.bottomNavigationView.getMenu().findItem(R.id.studentDetail).setChecked(true);
                         break;
                     case 1:
-                        binding.bottomNavigationView.getMenu().findItem(R.id.Sports).setChecked(true);
-                        break;
-                    case 2:
                         binding.bottomNavigationView.getMenu().findItem(R.id.profile_bottom).setChecked(true);
                         break;
+
                 }
             }
 

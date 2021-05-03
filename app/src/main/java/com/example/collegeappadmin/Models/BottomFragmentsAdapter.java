@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.collegeappadmin.Fragements.libraryFragment;
 import com.example.collegeappadmin.Fragements.profileFragment;
-import com.example.collegeappadmin.Fragements.sportFragment;
+import com.example.collegeappadmin.Fragements.studentFragment;
 
 
 public class BottomFragmentsAdapter extends FragmentStatePagerAdapter {
@@ -27,20 +26,19 @@ public class BottomFragmentsAdapter extends FragmentStatePagerAdapter {
         switch (position)
         {
             case 0:
-                return new libraryFragment();
+                return new studentFragment();
 
             case 1:
-                return new sportFragment();
-            case 2:
                 return new profileFragment();
+
             default:
-                return new libraryFragment();
+                return new studentFragment();
         }
 
     }
 
     @Override
     public int getCount() {
-        return 3;       //Number of navigation at the Bottom
+        return 2;       //Number of navigation at the Bottom
     }
 }
