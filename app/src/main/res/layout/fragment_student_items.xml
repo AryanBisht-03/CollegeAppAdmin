@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:background="@drawable/bg_bottom_navigation"
+        android:background="@drawable/bg_button_logout"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
         android:padding="5dp"
@@ -39,12 +39,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:text="@string/items_text_NO"
         android:textColor="#222222"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/addNew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/addNew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/books" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

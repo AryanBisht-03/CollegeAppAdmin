@@ -22,16 +22,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D6D6D6"
-            android:orientation="horizontal">
+            android:background="@drawable/recyler_bg"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageStudent"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:scaleType="centerCrop"
+                android:src="@drawable/man"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="2dp" />
+
                 app:srcCompat="@drawable/man" />
 
             <LinearLayout

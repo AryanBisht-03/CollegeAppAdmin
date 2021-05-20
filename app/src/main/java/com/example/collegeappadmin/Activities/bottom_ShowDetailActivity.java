@@ -2,6 +2,7 @@ package com.example.collegeappadmin.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -31,6 +32,8 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBottomShowDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         mAuth = FirebaseAuth.getInstance();
         BottomFragmentsAdapter navigationAdapter = new BottomFragmentsAdapter(getSupportFragmentManager());

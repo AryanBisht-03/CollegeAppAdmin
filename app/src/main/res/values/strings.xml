@@ -47,8 +47,8 @@
     <!--Used in Sports and library Fragment-->
     <string name="nothing_title_sport">You have not issue any sport product. Please issue some product and play as well because sport is also
         a important part of our life. So play some sport and enjoy life :-)</string>
-    <string name="nothing_title_library">You have not issue any books. Please issues and study because you are here to study and make your parents and teachers
-        proud, so study now.. :-)</string>
+    <string name="nothing_title_student">There is not student in database please wait while we fetch the data or ask students to install
+        the app.:-)</string>
 
 
 </resources>

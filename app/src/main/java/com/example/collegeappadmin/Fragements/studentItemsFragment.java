@@ -113,13 +113,13 @@ public class studentItemsFragment extends Fragment {
         if(items.size()==0)
         {
             binding.textView4.setVisibility(View.VISIBLE);
-//            binding.animationView.setVisibility(View.VISIBLE);
+            binding.animationView.setVisibility(View.VISIBLE);
             binding.studentItemsRecyclerView.setVisibility(View.GONE);
         }
         else
         {
             binding.textView4.setVisibility(View.GONE);
-//            binding.animationView.setVisibility(View.GONE);
+            binding.animationView.setVisibility(View.GONE);
             binding.studentItemsRecyclerView.setVisibility(View.VISIBLE);
         }
     }

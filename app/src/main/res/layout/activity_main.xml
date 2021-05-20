@@ -39,6 +39,7 @@
             android:id="@+id/rollTextMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/recyler_bg"
             android:hint="@string/name_Text"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,5 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/distance_education" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

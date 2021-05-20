@@ -57,6 +57,7 @@ public class studentFragment extends Fragment {
                     studentDetialModel info = data.getValue(studentDetialModel.class);
                     values.add(info);
                 }
+                checkSizeOfItems();
                 adapter.notifyDataSetChanged();
             }
 
@@ -70,5 +71,20 @@ public class studentFragment extends Fragment {
 
         binding.recyclerViewStudents.setAdapter(adapter);
         return binding.getRoot();
+    }
+
+    private void checkSizeOfItems() {
+        if(values.size()==0)
+        {
+            binding.textView4.setVisibility(View.VISIBLE);
+            binding.animationView.setVisibility(View.VISIBLE);
+            binding.recyclerViewStudents.setVisibility(View.GONE);
+        }
+        else
+        {
+            binding.textView4.setVisibility(View.GONE);
+            binding.animationView.setVisibility(View.GONE);
+            binding.recyclerViewStudents.setVisibility(View.VISIBLE);
+        }
     }
 }
