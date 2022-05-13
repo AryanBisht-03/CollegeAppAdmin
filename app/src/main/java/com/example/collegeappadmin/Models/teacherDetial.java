@@ -1,7 +1,15 @@
 package com.example.collegeappadmin.Models;
 
 public class teacherDetial {
-    String phone,gender;
+    String phone,gender,image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public teacherDetial(String phone, String gender) {
         this.phone = phone;
