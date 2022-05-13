@@ -1,14 +1,17 @@
 package com.example.collegeappadmin.Fragements;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.collegeappadmin.Activities.MainActivity;
 import com.example.collegeappadmin.Models.teacherDetial;
@@ -18,6 +21,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +30,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 public class profileFragment extends Fragment {
@@ -36,6 +43,8 @@ public class profileFragment extends Fragment {
     FirebaseAuth mAuth;
     FirebaseDatabase database;
     DatabaseReference reference;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    public static final int PICK_IMAGE = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +57,7 @@ public class profileFragment extends Fragment {
         reference = database.getReference().child(getString(R.string.key_teacher)).child(mAuth.getUid());
 
         binding.nameText.setText(mAuth.getCurrentUser().getDisplayName());
-        Picasso.get().load(mAuth.getCurrentUser().getPhotoUrl()).placeholder(R.drawable.man).into(binding.profileImage);
+
         binding.emailText.setText(mAuth.getCurrentUser().getEmail());
 
 
@@ -57,7 +66,7 @@ public class profileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 teacherDetial details = snapshot.getValue(teacherDetial.class);
-
+                Picasso.get().load(details.getImage()).placeholder(R.drawable.man).into(binding.profileImage);
                 binding.genderText.setText(details.getGender());
                 binding.phoneText.setText(details.getPhone());
             }
@@ -89,6 +98,41 @@ public class profileFragment extends Fragment {
             }
         });
 
+        binding.changeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+            }
+        });
         return binding.getRoot();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == PICK_IMAGE) {
+            Uri image = data.getData();
+            binding.profileImage.setImageURI(image);
+            storage.getReference().child(mAuth.getUid()).putFile(image).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if(task.isSuccessful()){
+                        storage.getReference().child(mAuth.getUid()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String link = uri.toString();
+                                database.getReference().child(getString(R.string.key_teacher)).child(mAuth.getUid()).child("image").setValue(link);
+                            }
+                        });
+                    }
+                    else
+                        Toast.makeText(getContext(), "Not able to upload due to some error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
 }

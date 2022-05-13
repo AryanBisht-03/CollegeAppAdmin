@@ -201,7 +201,10 @@ public class addNewItemFragment extends Fragment {
             public void onDateSet(DatePicker datePicker, int year, int month, int day)
             {
                 month = month + 1;
-                returnDate = day+"/"+month+"/"+year;
+                if(month<10)
+                    returnDate = day+"/0"+month+"/"+year;
+                else
+                    returnDate = day+"/"+month+"/"+year;
                 String date = makeDateString(day, month, year);
 
                 binding.datePickerButton.setText(date);

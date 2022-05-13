@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="@string/title_addNew"
-        android:textColor="#F3F3F3"
-        android:textSize="32sp"
+        android:textColor="#0F2EC8"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +34,7 @@
             android:id="@+id/sportRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_strokes"
             android:padding="5dp"
             android:text="Sports Item"
             android:textColor="#1F72E6"
@@ -44,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:background="@drawable/bg_strokes"
             android:padding="5dp"
             android:text="Books"
             android:textColor="#1F72E6"
@@ -97,7 +99,7 @@
         android:layout_marginTop="50dp"
         android:text="@string/title_return"
         android:textColor="#1F72E6"
-        android:textSize="22sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
@@ -111,7 +113,7 @@
         android:padding="10dp"
         android:text="JAN 01 2020"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
@@ -134,8 +136,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="45dp"
         android:text="Item Issued"
-        android:textColor="#fff"
-        android:textSize="22sp"
+        android:textColor="#0F2EC8"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
